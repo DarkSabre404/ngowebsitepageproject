@@ -1,0 +1,174 @@
+/* Global Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f6f9; /* Soft gray-blue background */
+    color: #333333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* The Ribbon (Navbar) Styles */
+.navbar {
+    width: 100%;
+    background: linear-gradient(135deg, #004085 0%, #002752 100%);
+    color: white;
+    padding: 20px 40px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.6rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+}
+
+.nav-links a {
+    color: #e2e3e5;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 10px 20px;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    font-size: 1.1rem;
+}
+
+.nav-links a:hover {
+    background-color: rgba(255, 255, 255, 0.15);
+    color: #ffffff;
+}
+
+.nav-links a.active {
+    color: #ffffff;
+    background-color: #0056b3;
+}
+
+/* Core Content Layout */
+.content-area {
+    width: 90%;
+    max-width: 1100px;
+    margin: 50px auto;
+    padding: 40px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+/* Home / Hero Section Styling */
+.hero-section {
+    text-align: center;
+    padding: 60px 20px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.hero-section h1 {
+    font-size: 3rem;
+    color: #004085;
+    margin-bottom: 24px;
+    font-weight: 800;
+}
+
+.hero-subtitle {
+    font-size: 1.4rem;
+    line-height: 1.8;
+    color: #555555;
+}
+
+/* About Section Layout */
+.about-header {
+    text-align: center;
+    max-width: 850px;
+    margin: 0 auto 50px auto;
+}
+
+.about-header h2 {
+    font-size: 2.5rem;
+    color: #004085;
+    margin-bottom: 20px;
+    font-weight: 800;
+}
+
+.intro-text {
+    font-size: 1.3rem;
+    line-height: 1.8;
+    color: #4a5568;
+}
+
+/* Responsive Grid Columns for About Page Info Cards */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.info-card {
+    background-color: #f8fafc;
+    border-top: 5px solid #0056b3;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02);
+}
+
+.info-card h3 {
+    font-size: 1.6rem;
+    color: #002752;
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+.info-card p {
+    font-size: 1.15rem;
+    line-height: 1.7;
+    color: #4a5568;
+}
+
+/* List Styling inside Cards */
+.mission-list {
+    list-style: none;
+}
+
+.mission-list li {
+    margin-bottom: 15px;
+    font-size: 1.15rem;
+    line-height: 1.6;
+    color: #4a5568;
+    position: relative;
+    padding-left: 20px;
+}
+
+/* Subtle custom bullet point styling */
+.mission-list li::before {
+    content: "•";
+    color: #0056b3;
+    font-weight: bold;
+    font-size: 1.5rem;
+    position: absolute;
+    left: 0;
+    top: -2px;
+}
