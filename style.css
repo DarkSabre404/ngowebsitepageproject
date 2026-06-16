@@ -172,3 +172,43 @@ body {
     left: 0;
     top: -2px;
 }
+/* Events Page Specific Styles */
+.events-section {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.events-section h2 {
+    font-size: 2.5rem;
+    color: #004085;
+    margin-bottom: 20px;
+    font-weight: 800;
+}
+
+.no-events-card {
+    background-color: #f8fafc;
+    border: 2px dashed #b8c2cc;
+    border-radius: 12px;
+    padding: 40px 20px;
+    margin-top: 40px;
+}
+
+.calendar-icon {
+    font-size: 3.5rem;
+    margin-bottom: 15px;
+}
+
+.no-events-card h3 {
+    font-size: 1.6rem;
+    color: #333333;
+    margin-bottom: 10px;
+}
+
+.no-events-card p {
+    font-size: 1.15rem;
+    color: #606f7b;
+    max-width: 500px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
