@@ -1,14 +1,18 @@
-/* General Base Setup - Dark Mode */
+/* ==========================================================================
+   1. General Base Setup - Dark Mode
+   ========================================================================== */
 body {
     margin: 0;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #0f172a;
-    color: #f8fafc;
+    background-color: #0f172a; /* Deep midnight blue background */
+    color: #f8fafc; /* Crisp near-white text */
 }
 
-/* The Ribbon / Navbar Styling */
+/* ==========================================================================
+   2. The Ribbon / Navbar Styling
+   ========================================================================== */
 .navbar {
-    background-color: #1e293b;
+    background-color: #1e293b; /* Sleek dark slate gray */
     padding: 15px 0;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
     border-bottom: 1px solid #334155;
@@ -38,7 +42,7 @@ body {
 }
 
 .nav-links a {
-    color: #cbd5e1;
+    color: #cbd5e1; /* Soft gray for unselected links */
     text-decoration: none;
     font-size: 1.05rem;
     font-weight: 500;
@@ -53,20 +57,37 @@ body {
 }
 
 .nav-links a.active {
-    background-color: #3b82f6;
+    background-color: #3b82f6; /* Vivid neon blue active button */
     color: #ffffff;
     font-weight: 600;
     box-shadow: 0 0 12px rgba(59, 130, 246, 0.4);
 }
 
-/* Page Layout Wrappers */
+/* ==========================================================================
+   3. Page Layout Wrappers & Component Grids
+   ========================================================================== */
 .content-area {
     max-width: 1100px;
     margin: 40px auto;
     padding: 0 20px;
 }
 
-/* Home / Hero Page Styles */
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    margin-top: 40px;
+}
+
+@media (max-width: 768px) {
+    .grid-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ==========================================================================
+   4. Home / Hero Page Styles
+   ========================================================================== */
 .hero-section {
     text-align: center;
     padding: 60px 20px;
@@ -74,20 +95,22 @@ body {
 
 .hero-section h1 {
     font-size: 3rem;
-    color: #3b82f6;
+    color: #3b82f6; /* Electric blue header */
     margin-bottom: 20px;
     font-weight: 800;
 }
 
 .hero-subtitle {
     font-size: 1.3rem;
-    color: #94a3b8;
+    color: #94a3b8; /* Muted slate subtitle text */
     max-width: 700px;
     margin: 0 auto;
     line-height: 1.6;
 }
 
-/* About Page Styles */
+/* ==========================================================================
+   5. About Page Styles
+   ========================================================================== */
 .about-header {
     text-align: center;
     margin-bottom: 40px;
@@ -108,22 +131,8 @@ body {
     margin: 0 auto;
 }
 
-/* Grid layout for cards */
-.grid-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 30px;
-    margin-top: 40px;
-}
-
-@media (max-width: 768px) {
-    .grid-container {
-        grid-template-columns: 1fr;
-    }
-}
-
 .info-card {
-    background-color: #1e293b;
+    background-color: #1e293b; /* Dark card surfaces */
     border-top: 4px solid #3b82f6;
     border-radius: 8px;
     padding: 30px;
@@ -134,7 +143,7 @@ body {
 }
 
 .info-card h3 {
-    color: #60a5fa;
+    color: #60a5fa; /* Lighter bright blue for card subheadings */
     font-size: 1.6rem;
     margin-top: 0;
     margin-bottom: 15px;
@@ -166,7 +175,9 @@ body {
     color: #f8fafc;
 }
 
-/* Events Page Specific Styles */
+/* ==========================================================================
+   6. Events Page Specific Styles
+   ========================================================================== */
 .events-section {
     text-align: center;
     max-width: 800px;
@@ -182,7 +193,7 @@ body {
 
 .no-events-card {
     background-color: #1e293b;
-    border: 2px dashed #475569;
+    border: 2px dashed #475569; /* Darker dashed line border */
     border-radius: 12px;
     padding: 40px 20px;
     margin-top: 40px;
@@ -207,7 +218,9 @@ body {
     line-height: 1.6;
 }
 
-/* Our Team Page Specific Styles */
+/* ==========================================================================
+   7. Our Team Page Specific Styles
+   ========================================================================== */
 .team-section {
     text-align: center;
 }
@@ -259,94 +272,135 @@ body {
     font-weight: 500;
 }
 
-/* Authentication Container Specifics */
-.auth-container {
+/* ==========================================================================
+   8. Premium Authentication Card & Segmented Tabs Styling
+   ========================================================================== */
+.auth-card {
     background-color: #1e293b;
-    max-width: 400px;
+    max-width: 420px;
     margin: 60px auto;
-    padding: 40px 30px;
-    border-radius: 12px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+    border-radius: 16px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
     border: 1px solid #334155;
+    overflow: hidden; /* Keeps the top tabs flush with the card corners */
+}
+
+/* Tab Switching Layout Wrapper */
+.auth-tabs {
+    display: flex;
+    background-color: #0f172a;
+    border-bottom: 1px solid #334155;
+}
+
+/* Interactive Top Tabs */
+.auth-tab {
+    flex: 1;
+    padding: 16px;
+    background: none;
+    border: none;
+    color: #94a3b8;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
     text-align: center;
 }
 
-.auth-container h2 {
-    color: #3b82f6;
-    margin-bottom: 5px;
+.auth-tab:hover {
+    color: #ffffff;
+    background-color: rgba(255, 255, 255, 0.02);
+}
+
+/* Distinct Active Tab State Indicator */
+.auth-tab.active {
+    color: #ffffff;
+    background-color: #1e293b;
+    border-bottom: 3px solid #3b82f6;
+}
+
+/* Main Form Area Content Block */
+.auth-body {
+    padding: 40px 35px;
+    text-align: center;
+}
+
+.auth-card h2 {
+    color: #ffffff;
+    margin: 0 0 8px 0;
     font-size: 2rem;
+    font-weight: 700;
 }
 
 #auth-subtitle {
     color: #94a3b8;
-    margin-bottom: 30px;
-    font-size: 1rem;
+    margin: 0 0 30px 0;
+    font-size: 0.95rem;
+    line-height: 1.5;
 }
 
 .form-group {
     text-align: left;
-    margin-bottom: 20px;
+    margin-bottom: 22px;
 }
 
 .form-group label {
     display: block;
     color: #cbd5e1;
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     margin-bottom: 8px;
-    font-weight: 500;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
 }
 
 .form-group input {
     width: 100%;
-    padding: 12px;
-    border-radius: 6px;
+    padding: 14px;
+    border-radius: 8px;
     border: 1px solid #475569;
     background-color: #0f172a;
     color: #ffffff;
     font-size: 1rem;
     box-sizing: border-box;
+    transition: all 0.2s ease;
 }
 
 .form-group input:focus {
     outline: none;
     border-color: #3b82f6;
-    box-shadow: 0 0 8px rgba(59, 130, 246, 0.3);
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
 }
 
 #submit-btn {
     width: 100%;
-    padding: 12px;
+    padding: 14px;
     background-color: #3b82f6;
     color: white;
     border: none;
-    border-radius: 6px;
+    border-radius: 8px;
     font-size: 1rem;
     font-weight: 600;
     cursor: pointer;
-    transition: background-color 0.2s ease;
+    transition: all 0.2s ease;
+    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
 }
 
 #submit-btn:hover {
     background-color: #2563eb;
+    transform: translateY(-1px);
 }
 
-.auth-toggle {
-    margin-top: 25px;
-    font-size: 0.95rem;
-    color: #94a3b8;
-}
-
-.auth-toggle a {
-    color: #3b82f6;
-    text-decoration: none;
-    font-weight: 600;
+#submit-btn:active {
+    transform: translateY(0);
 }
 
 .message-box {
     margin-top: 20px;
     font-size: 0.95rem;
     font-weight: 500;
+    min-height: 20px;
 }
 
-.success-msg { color: #10b981; }
-.error-msg { color: #ef4444; }
+/* Global Status Alerts */
+.success-msg { color: #34d399; }
+.error-msg { color: #f87171; }
